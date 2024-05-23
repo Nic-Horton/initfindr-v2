@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 export default function Home() {
 	return (
-		<main className="h-full antialiased">
-			<div className="absolute inset-0 bg-[url('/wallhaven.jpg')] bg-cover bg-center filter blur-[2px] h-[97vh]" />
-			<section className="relative z-10 h-[97vh]">
-				<MaxWidthWrapper className="flex flex-col justify-center">
+		<main className="antialiased">
+			<div className="absolute -z-10 inset-0 bg-[url('/wallhaven.jpg')] bg-cover bg-center filter blur-[2px] h-screen" />
+			<section className="relative z-10 h-[90vh]">
+				<MaxWidthWrapper className="flex flex-col justify-center shadow-2xl">
 					<div className="px-6 lg:px-0 ">
 						<div className="mx-auto text-center flex flex-col items-center">
 							<div>
@@ -23,7 +23,7 @@ export default function Home() {
 							</h1>
 						</div>
 					</div>
-					<div className=" absolute text-stone-100 bottom-12 left-1/2 ">
+					<div className=" absolute text-stone-100 bottom-10 left-1/2 ">
 						<ArrowDown className="w-8 h-8" />
 					</div>
 				</MaxWidthWrapper>
