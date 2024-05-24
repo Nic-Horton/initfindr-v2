@@ -55,7 +55,7 @@ const Navbar = async () => {
 									className: 'flex items-center gap-1',
 								})}
 							>
-								Login
+								Sign in
 								<ArrowRight className="ml-1.5 h-5 w-5" />
 							</Link>
 						</>
