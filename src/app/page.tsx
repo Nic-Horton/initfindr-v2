@@ -76,7 +76,7 @@ export default function Home() {
 							</ul>
 
 							<Link
-								href="/api/signin"
+								href="/signin"
 								className={buttonVariants({
 									size: 'lg',
 									className: 'mt-8 ',

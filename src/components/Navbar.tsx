@@ -21,44 +21,29 @@ const Navbar = async () => {
 					</Link>
 
 					<div className="h-full flex items-center space-x-4">
-						{/* <>
-								<Link
-									href="/api/auth/logout"
-									className={buttonVariants({
-										size: 'sm',
-										className: 'flex items-center gap-1',
-									})}
-								>
-									Sign out
-									<LogOut className="ml-1.5 h-5 w-5" />
-								</Link>
-							</> */}
+						<Link
+							href="/signup"
+							className={buttonVariants({
+								size: 'sm',
+								variant: 'ghost',
+								className: 'text-[#c8b874]',
+							})}
+						>
+							Sign up
+						</Link>
 
-						<>
-							<Link
-								href="/api/auth/register"
-								className={buttonVariants({
-									size: 'sm',
-									variant: 'ghost',
-									// className: 'hover:bg-[#c8b874]',
-								})}
-							>
-								Sign up
-							</Link>
+						<div className="h-8 w-px bg-stone-800 hidden sm:block" />
 
-							<div className="h-8 w-px bg-stone-800 hidden sm:block" />
-
-							<Link
-								href="/api/auth/login"
-								className={buttonVariants({
-									size: 'sm',
-									className: 'flex items-center gap-1',
-								})}
-							>
-								Sign in
-								<ArrowRight className="ml-1.5 h-5 w-5" />
-							</Link>
-						</>
+						<Link
+							href="/signin"
+							className={buttonVariants({
+								size: 'sm',
+								className: 'flex items-center gap-1',
+							})}
+						>
+							Sign in
+							<ArrowRight className="ml-1.5 h-5 w-5" />
+						</Link>
 					</div>
 				</div>
 			</MaxWidthWrapper>
