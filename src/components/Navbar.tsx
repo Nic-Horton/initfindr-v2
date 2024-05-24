@@ -5,8 +5,6 @@ import { ArrowRight, LogOut } from 'lucide-react';
 import Image from 'next/image';
 
 const Navbar = async () => {
-	const user = false;
-
 	return (
 		<nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-stone-700 bg-stone-600/75 backdrop-blur-lg transition-all">
 			<MaxWidthWrapper>
@@ -23,8 +21,7 @@ const Navbar = async () => {
 					</Link>
 
 					<div className="h-full flex items-center space-x-4">
-						{user ? (
-							<>
+						{/* <>
 								<Link
 									href="/api/auth/logout"
 									className={buttonVariants({
@@ -35,34 +32,33 @@ const Navbar = async () => {
 									Sign out
 									<LogOut className="ml-1.5 h-5 w-5" />
 								</Link>
-							</>
-						) : (
-							<>
-								<Link
-									href="/api/auth/register"
-									className={buttonVariants({
-										size: 'sm',
-										variant: 'ghost',
-										className: 'hover:bg-[#c8b874]',
-									})}
-								>
-									Sign up
-								</Link>
+							</> */}
 
-								<div className="h-8 w-px bg-stone-800 hidden sm:block" />
+						<>
+							<Link
+								href="/api/auth/register"
+								className={buttonVariants({
+									size: 'sm',
+									variant: 'ghost',
+									// className: 'hover:bg-[#c8b874]',
+								})}
+							>
+								Sign up
+							</Link>
 
-								<Link
-									href="/api/auth/login"
-									className={buttonVariants({
-										size: 'sm',
-										className: 'flex items-center gap-1',
-									})}
-								>
-									Login
-									<ArrowRight className="ml-1.5 h-5 w-5" />
-								</Link>
-							</>
-						)}
+							<div className="h-8 w-px bg-stone-800 hidden sm:block" />
+
+							<Link
+								href="/api/auth/login"
+								className={buttonVariants({
+									size: 'sm',
+									className: 'flex items-center gap-1',
+								})}
+							>
+								Login
+								<ArrowRight className="ml-1.5 h-5 w-5" />
+							</Link>
+						</>
 					</div>
 				</div>
 			</MaxWidthWrapper>
