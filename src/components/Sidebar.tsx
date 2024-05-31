@@ -14,15 +14,15 @@ import CreatureDrawer from './CreatureDrawer';
 const Sidebar = () => {
 	return (
 		<aside className="inset-y fixed  left-0 z-20 flex h-full flex-col border-r">
-			<div className="border-b p-2">
-				<Button asChild variant="ghost" size="icon" aria-label="Home">
-					<Link href="/citadel">
-						<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
-					</Link>
-				</Button>
-			</div>
-			<nav className="grid gap-1 p-2">
-				<TooltipProvider>
+			<TooltipProvider>
+				<div className="border-b p-2">
+					<Button asChild variant="ghost" size="icon" aria-label="Home">
+						<Link href="/citadel">
+							<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
+						</Link>
+					</Button>
+				</div>
+				<nav className="grid gap-1 p-2">
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
@@ -62,11 +62,10 @@ const Sidebar = () => {
 							The War Room
 						</TooltipContent>
 					</Tooltip>
+
 					<TrackerDrawer />
-				</TooltipProvider>
-			</nav>
-			<nav className="mt-auto grid gap-1 p-2">
-				<TooltipProvider>
+				</nav>
+				<nav className="mt-auto grid gap-1 p-2">
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
@@ -85,8 +84,8 @@ const Sidebar = () => {
 							Account
 						</TooltipContent>
 					</Tooltip>
-				</TooltipProvider>
-			</nav>
+				</nav>
+			</TooltipProvider>
 		</aside>
 	);
 };

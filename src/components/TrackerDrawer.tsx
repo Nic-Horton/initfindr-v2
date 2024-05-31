@@ -20,7 +20,11 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from '@/components/ui/drawer';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 const tags = Array.from({ length: 10 }).map(
 	(_, i, a) => `Unit ${a.length - i}`
@@ -30,15 +34,19 @@ const TrackerDrawer = () => {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button
-					variant="ghost"
-					size="icon"
-					className="md:hidden"
-					aria-label="Battle Configs"
-				>
-					<Settings className="size-5" />
-					<span className="sr-only">Battle Configurations</span>
-				</Button>
+				<span>
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<Button variant="ghost" size="icon" className="md:hidden">
+								<Settings className="size-5" />
+								<span className="sr-only">Battle Configurations</span>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent side="right" sideOffset={5}>
+							Battle Config
+						</TooltipContent>
+					</Tooltip>
+				</span>
 			</DrawerTrigger>
 			<DrawerContent className="max-h-[80vh]">
 				<DrawerHeader>
@@ -122,69 +130,47 @@ const TrackerDrawer = () => {
 						</legend>
 						<div className="grid gap-3">
 							<Label htmlFor="creatures">Creatures</Label>
-							<Tabs defaultValue="account" className="w-[400px]">
-								<TabsList>
-									<TabsTrigger value="all">All</TabsTrigger>
-									<TabsTrigger value="creatures">Creatures</TabsTrigger>
-									<TabsTrigger value="monsters">Monsters</TabsTrigger>
-								</TabsList>
-								<TabsContent value="all">
-									<Input
-										id="search"
-										type="text"
-										placeholder={'Search for creatures...'}
-									/>
-									All units shown here.
-									<ScrollArea className="h-72 w-full rounded-md border">
-										<div className="p-4">
-											<h4 className="mb-4 text-sm font-medium leading-none">
-												Creatures
-											</h4>
-											{tags.map((tag) => (
-												<>
-													<div
-														key={tag}
-														className="text-sm flex justify-between items-center"
+
+							<div className="grid gap-2">
+								<Input
+									id="search"
+									type="text"
+									placeholder={'Search for creatures...'}
+								/>
+
+								<ScrollArea className="h-52 w-full rounded-md border">
+									<div className="p-4">
+										<h4 className="mb-4 text-sm font-medium leading-none">
+											Creatures
+										</h4>
+										{tags.map((tag) => (
+											<>
+												<div
+													key={tag}
+													className="text-sm flex justify-between items-center"
+												>
+													<Button
+														variant={'ghost'}
+														type="button"
+														className="w-full justify-start"
 													>
-														<Button
-															variant={'ghost'}
-															type="button"
-															className="w-full justify-start"
-														>
-															{tag}
-														</Button>
-														<Button
-															variant={'ghost'}
-															size={'icon'}
-															type="button"
-															className=""
-														>
-															<ScanEye className="size-5" />
-														</Button>
-													</div>
-													<Separator className="my-2" />
-												</>
-											))}
-										</div>
-									</ScrollArea>
-								</TabsContent>
-								<TabsContent value="creatures">
-									<Input
-										id="search"
-										type="text"
-										placeholder={'Search for creatures...'}
-									/>
-									Friendly units shown here.
-								</TabsContent>
-								<TabsContent value="monsters">
-									<Input
-										id="search"
-										type="text"
-										placeholder={'Search for creatures...'}
-									/>
-									Hostile units shown here.
-								</TabsContent>
-							</Tabs>
+														{tag}
+													</Button>
+													<Button
+														variant={'ghost'}
+														size={'icon'}
+														type="button"
+														className=""
+													>
+														<ScanEye className="size-5" />
+													</Button>
+												</div>
+												<Separator className="my-2" />
+											</>
+										))}
+									</div>
+								</ScrollArea>
+							</div>
 						</div>
 					</fieldset>
 				</div>
