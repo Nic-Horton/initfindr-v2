@@ -1,4 +1,4 @@
-import { Pickaxe } from 'lucide-react';
+import { Anvil } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 
@@ -26,7 +26,7 @@ const CreatureDrawer = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button variant="ghost" size="icon">
-								<Pickaxe className="size-5" />
+								<Anvil className="size-5" />
 								<span className="sr-only">Creature Entry</span>
 							</Button>
 						</TooltipTrigger>
