@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Shield, Heart, Ham, Brain, Zap } from 'lucide-react';
 import {
 	Card,
 	CardContent,
@@ -45,29 +46,48 @@ const NewCreature = () => {
 					</div>
 					<div className="grid grid-cols-2 gap-4 col-span-full">
 						<div className="grid gap-2">
-							<Label htmlFor="ac">Armor Class</Label>
+							<Label htmlFor="ac">
+								<div className="flex items-center gap-1">
+									<Shield className="size-5" />
+									Armor Class
+								</div>
+							</Label>
 							<Input id="ac" type="number" />
 						</div>
 						<div className="grid gap-2">
-							<Label htmlFor="hp">Health Points</Label>
+							<Label htmlFor="hp">
+								<div className="flex items-center gap-1">
+									<Heart className="size-5" />
+									Health Points
+								</div>
+							</Label>
 							<Input id="ac" type="number" />
 						</div>
 					</div>
 					<div className="grid gap-2">
-						<Label htmlFor="fs" className="text-center">
-							Fortitude
+						<Label htmlFor="fs">
+							<div className="flex items-center justify-center  gap-1">
+								<Ham className="size-5" />
+								Fortitude
+							</div>
 						</Label>
 						<Input id="fs" type="number" />
 					</div>
 					<div className="grid gap-2">
-						<Label htmlFor="ws" className="text-center">
-							Will
+						<Label htmlFor="ws">
+							<div className="flex items-center justify-center  gap-1">
+								<Brain className="size-5" />
+								Will
+							</div>
 						</Label>
 						<Input id="ws" type="number" />
 					</div>
 					<div className="grid gap-2">
-						<Label htmlFor="rs" className="text-center">
-							Reflex
+						<Label htmlFor="rs">
+							<div className="flex items-center justify-center  gap-1">
+								<Zap className="size-5" />
+								Reflex
+							</div>
 						</Label>
 						<Input id="rs" type="number" />
 					</div>
