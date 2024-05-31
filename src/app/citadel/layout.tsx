@@ -4,7 +4,6 @@ import { LogOutIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 import Sidebar from '@/components/Sidebar';
-import TrackerDrawer from '@/components/TrackerDrawer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -14,7 +13,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			<div className="flex flex-col">
 				<header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
 					<h1 className="text-xl font-semibold">The Citadel</h1>
-					<TrackerDrawer />
 					<Button
 						asChild
 						variant="outline"

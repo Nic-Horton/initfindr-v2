@@ -1,13 +1,10 @@
 import Image from 'next/image';
-
 import { Settings, Sword, Swords, Trash, ScanEye } from 'lucide-react';
-
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
-
 import {
 	Select,
 	SelectContent,
@@ -15,7 +12,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-
 import {
 	Drawer,
 	DrawerContent,
@@ -24,7 +20,6 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from '@/components/ui/drawer';
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const tags = Array.from({ length: 10 }).map(
@@ -35,14 +30,19 @@ const TrackerDrawer = () => {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
-				<Button variant="ghost" size="icon" className="md:hidden">
-					<Settings className="size-4" />
-					<span className="sr-only">Tracker</span>
+				<Button
+					variant="ghost"
+					size="icon"
+					className="md:hidden"
+					aria-label="Battle Configs"
+				>
+					<Settings className="size-5" />
+					<span className="sr-only">Battle Configurations</span>
 				</Button>
 			</DrawerTrigger>
 			<DrawerContent className="max-h-[80vh]">
 				<DrawerHeader>
-					<DrawerTitle>Configuration</DrawerTitle>
+					<DrawerTitle>Configurations</DrawerTitle>
 					<DrawerDescription>Configure the battlefield.</DrawerDescription>
 				</DrawerHeader>
 				<div className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">

@@ -1,16 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { Swords, Castle, FlameKindling, Pickaxe } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
-
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
 	TooltipProvider,
 } from '@/components/ui/tooltip';
+import TrackerDrawer from './TrackerDrawer';
 
 const Sidebar = () => {
 	return (
@@ -79,6 +77,7 @@ const Sidebar = () => {
 							The War Room
 						</TooltipContent>
 					</Tooltip>
+					<TrackerDrawer />
 				</TooltipProvider>
 			</nav>
 			<nav className="mt-auto grid gap-1 p-2">
