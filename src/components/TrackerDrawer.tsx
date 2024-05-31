@@ -45,7 +45,7 @@ const TrackerDrawer = () => {
 					<DrawerTitle>Configuration</DrawerTitle>
 					<DrawerDescription>Configure the battlefield.</DrawerDescription>
 				</DrawerHeader>
-				<form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
+				<div className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
 					<fieldset className="grid gap-6 rounded-lg border p-4">
 						<legend className="-ml-1 px-1 text-sm font-medium">
 							Battle Manager
@@ -187,7 +187,7 @@ const TrackerDrawer = () => {
 							</Tabs>
 						</div>
 					</fieldset>
-				</form>
+				</div>
 			</DrawerContent>
 		</Drawer>
 	);
