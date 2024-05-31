@@ -9,6 +9,7 @@ import {
 	TooltipProvider,
 } from '@/components/ui/tooltip';
 import TrackerDrawer from './TrackerDrawer';
+import CreatureDrawer from './CreatureDrawer';
 
 const Sidebar = () => {
 	return (
@@ -40,24 +41,8 @@ const Sidebar = () => {
 							The Citadel
 						</TooltipContent>
 					</Tooltip>
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
-								asChild
-								variant="ghost"
-								size="icon"
-								className="rounded-lg"
-								aria-label="The Forge"
-							>
-								<Link href="/citadel/forge">
-									<Pickaxe className="size-5" />
-								</Link>
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent side="right" sideOffset={5}>
-							The Forge
-						</TooltipContent>
-					</Tooltip>
+
+					<CreatureDrawer />
 
 					<Tooltip>
 						<TooltipTrigger asChild>
