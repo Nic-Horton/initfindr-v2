@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/tooltip';
 import TrackerDrawer from './TrackerDrawer';
 import CreatureDrawer from './CreatureDrawer';
+import BarracksDrawer from './BarracksDrawer';
 
 const Sidebar = () => {
 	return (
@@ -23,53 +24,17 @@ const Sidebar = () => {
 					</Button>
 				</div>
 				<nav className="grid gap-1 p-2">
+					<CreatureDrawer />
+
+					<BarracksDrawer />
+
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
 								asChild
-								variant="ghost"
-								size="icon"
-								className="rounded-lg bg-muted"
-								aria-label="The Battlefield"
-							>
-								<Link href="/battlefield">
-									<Swords className="size-5" />
-								</Link>
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent side="right" sideOffset={5}>
-							The Battlefield
-						</TooltipContent>
-					</Tooltip>
-
-					<CreatureDrawer />
-
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
 								variant="ghost"
 								size="icon"
 								className="rounded-lg"
-								aria-label="The Barracks"
-							>
-								<Castle className="size-5" />
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent side="right" sideOffset={5}>
-							The Barracks
-						</TooltipContent>
-					</Tooltip>
-
-					<TrackerDrawer />
-				</nav>
-				<nav className="mt-auto grid gap-1 p-2">
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
-								asChild
-								variant="ghost"
-								size="icon"
-								className="mt-auto rounded-lg"
 								aria-label="camp"
 							>
 								<Link href="/battlefield/camp">
@@ -81,6 +46,8 @@ const Sidebar = () => {
 							Camp
 						</TooltipContent>
 					</Tooltip>
+
+					<TrackerDrawer />
 				</nav>
 			</TooltipProvider>
 		</aside>

@@ -28,7 +28,12 @@ const TrackerDrawer = () => {
 				<span>
 					<Tooltip>
 						<TooltipTrigger asChild>
-							<Button variant="ghost" size="icon" className="md:hidden">
+							<Button
+								variant="ghost"
+								size="icon"
+								className="md:hidden rounded-lg"
+								aria-label="Battle Configurations"
+							>
 								<Settings className="size-5" />
 								<span className="sr-only">Battle Configurations</span>
 							</Button>

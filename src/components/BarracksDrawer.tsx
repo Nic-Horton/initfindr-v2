@@ -1,4 +1,4 @@
-import { Anvil } from 'lucide-react';
+import { Castle } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 
@@ -16,9 +16,7 @@ import {
 	TooltipTrigger,
 } from '@/components/ui/tooltip';
 
-import NewCreature from './NewCreature';
-
-const CreatureDrawer = () => {
+const BarracksDrawer = () => {
 	return (
 		<Drawer>
 			<DrawerTrigger asChild>
@@ -29,30 +27,28 @@ const CreatureDrawer = () => {
 								variant="ghost"
 								size="icon"
 								className="rounded-lg"
-								aria-label="The Forge"
+								aria-label="The Barracks"
 							>
-								<Anvil className="size-5" />
-								<span className="sr-only">Creature Entry</span>
+								<Castle className="size-5" />
+								<span className="sr-only">The Barracks</span>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
-							The Forge
+							The Barracks
 						</TooltipContent>
 					</Tooltip>
 				</span>
 			</DrawerTrigger>
 			<DrawerContent className="max-h-[80vh]">
 				<DrawerHeader>
-					<DrawerTitle className="text-center">The Forge</DrawerTitle>
+					<DrawerTitle className="text-center">The Barracks</DrawerTitle>
 					<DrawerDescription className="text-center">
-						Create your creatures here.
+						Update your creatures here.
 					</DrawerDescription>
 				</DrawerHeader>
-
-				<NewCreature />
 			</DrawerContent>
 		</Drawer>
 	);
 };
 
-export default CreatureDrawer;
+export default BarracksDrawer;
