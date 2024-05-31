@@ -17,7 +17,7 @@ const Sidebar = () => {
 			<TooltipProvider>
 				<div className="border-b p-2">
 					<Button asChild variant="ghost" size="icon" aria-label="Home">
-						<Link href="/citadel">
+						<Link href="/battlefield">
 							<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
 						</Link>
 					</Button>
