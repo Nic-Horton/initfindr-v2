@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Swords, Castle, FlameKindling, Pickaxe } from 'lucide-react';
 
@@ -15,8 +16,10 @@ const Sidebar = () => {
 	return (
 		<aside className="inset-y fixed  left-0 z-20 flex h-full flex-col border-r">
 			<div className="border-b p-2">
-				<Button variant="ghost" size="icon" aria-label="Home">
-					<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
+				<Button asChild variant="ghost" size="icon" aria-label="Home">
+					<Link href="/citadel">
+						<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
+					</Link>
 				</Button>
 			</div>
 			<nav className="grid gap-1 p-2">
@@ -24,12 +27,15 @@ const Sidebar = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
+								asChild
 								variant="ghost"
 								size="icon"
 								className="rounded-lg bg-muted"
 								aria-label="The Citadel"
 							>
-								<Castle className="size-5" />
+								<Link href="/citadel">
+									<Castle className="size-5" />
+								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
@@ -39,12 +45,15 @@ const Sidebar = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
+								asChild
 								variant="ghost"
 								size="icon"
 								className="rounded-lg"
 								aria-label="The Forge"
 							>
-								<Pickaxe className="size-5" />
+								<Link href="/citadel/forge">
+									<Pickaxe className="size-5" />
+								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
@@ -55,12 +64,15 @@ const Sidebar = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
+								asChild
 								variant="ghost"
 								size="icon"
 								className="rounded-lg"
 								aria-label="The War Room"
 							>
-								<Swords className="size-5" />
+								<Link href="/citadel/warroom">
+									<Swords className="size-5" />
+								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
@@ -74,12 +86,15 @@ const Sidebar = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
+								asChild
 								variant="ghost"
 								size="icon"
 								className="mt-auto rounded-lg"
 								aria-label="Account"
 							>
-								<FlameKindling className="size-5" />
+								<Link href="/citadel/account">
+									<FlameKindling className="size-5" />
+								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
