@@ -49,6 +49,7 @@ const BarracksDrawer = () => {
 				</span>
 			</DrawerTrigger>
 			<DrawerContent className="max-h-[80vh] min-h-[60vh]">
+				<div className="mx-auto mt-4 h-12 w-[100px] rounded-full bg-muted" />
 				<DrawerHeader>
 					<DrawerTitle className="text-center">The Barracks</DrawerTitle>
 					<DrawerDescription className="text-center">

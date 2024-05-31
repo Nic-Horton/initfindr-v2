@@ -19,7 +19,7 @@ const Sidebar = () => {
 				<div className="border-b p-2">
 					<Button asChild variant="ghost" size="icon" aria-label="Home">
 						<Link href="/battlefield">
-							<Image src={'/goldLogo.png'} alt="Logo" width={25} height={25} />
+							<Image src={'/goldLogo.png'} alt="Logo" width={24} height={24} />
 						</Link>
 					</Button>
 				</div>

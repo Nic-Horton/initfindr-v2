@@ -42,6 +42,7 @@ const CreatureDrawer = () => {
 				</span>
 			</DrawerTrigger>
 			<DrawerContent className="max-h-[80vh]">
+				<div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
 				<DrawerHeader>
 					<DrawerTitle className="text-center">The Forge</DrawerTitle>
 					<DrawerDescription className="text-center">
