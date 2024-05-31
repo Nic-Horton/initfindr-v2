@@ -29,7 +29,7 @@ const Sidebar = () => {
 								asChild
 								variant="ghost"
 								size="icon"
-								className="rounded-lg"
+								className="rounded-lg bg-muted"
 								aria-label="The Battlefield"
 							>
 								<Link href="/battlefield">
@@ -49,7 +49,7 @@ const Sidebar = () => {
 							<Button
 								variant="ghost"
 								size="icon"
-								className="rounded-lg bg-muted"
+								className="rounded-lg"
 								aria-label="The Barracks"
 							>
 								<Castle className="size-5" />
