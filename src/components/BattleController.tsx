@@ -15,8 +15,6 @@ import {
 	SelectValue,
 } from '@/components/ui/select';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
 const tags = Array.from({ length: 10 }).map(
 	(_, i, a) => `Unit ${a.length - i}`
 );

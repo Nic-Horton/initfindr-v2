@@ -1,6 +1,4 @@
 import BattleController from '@/components/BattleController';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 function Dashboard() {
 	return (

@@ -1,17 +1,7 @@
-import Image from 'next/image';
-import { Settings, Sword, Swords, Trash, ScanEye } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Settings } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Separator } from '@/components/ui/separator';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select';
+
 import {
 	Drawer,
 	DrawerContent,

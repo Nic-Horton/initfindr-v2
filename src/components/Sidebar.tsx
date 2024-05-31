@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Swords, Castle, FlameKindling, Pickaxe } from 'lucide-react';
+import { Swords, Castle, FlameKindling } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
 	Tooltip,

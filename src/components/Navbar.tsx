@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import { buttonVariants } from './ui/button';
-import { ArrowRight, LogOut } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 const Navbar = async () => {
