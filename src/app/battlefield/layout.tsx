@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			<Sidebar />
 			<div className="flex flex-col">
 				<header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
-					<h1 className="text-xl font-semibold">The Citadel</h1>
+					<h1 className="text-xl font-semibold">The Battlefield</h1>
 					<Button
 						asChild
 						variant="outline"

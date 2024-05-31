@@ -1,6 +1,8 @@
 import BattleController from '@/components/BattleController';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
-const WarRoom = () => {
+function Dashboard() {
 	return (
 		<main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
 			<div className="relative hidden flex-col items-start gap-8 md:flex">
@@ -11,6 +13,6 @@ const WarRoom = () => {
 			</div>
 		</main>
 	);
-};
+}
 
-export default WarRoom;
+export default Dashboard;

@@ -29,16 +29,16 @@ const Sidebar = () => {
 								asChild
 								variant="ghost"
 								size="icon"
-								className="rounded-lg bg-muted"
-								aria-label="The Citadel"
+								className="rounded-lg"
+								aria-label="The Battlefield"
 							>
-								<Link href="/citadel">
-									<Castle className="size-5" />
+								<Link href="/battlefield">
+									<Swords className="size-5" />
 								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
-							The Citadel
+							The Battlefield
 						</TooltipContent>
 					</Tooltip>
 
@@ -47,19 +47,16 @@ const Sidebar = () => {
 					<Tooltip>
 						<TooltipTrigger asChild>
 							<Button
-								asChild
 								variant="ghost"
 								size="icon"
-								className="rounded-lg"
-								aria-label="The War Room"
+								className="rounded-lg bg-muted"
+								aria-label="The Barracks"
 							>
-								<Link href="/citadel/warroom">
-									<Swords className="size-5" />
-								</Link>
+								<Castle className="size-5" />
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
-							The War Room
+							The Barracks
 						</TooltipContent>
 					</Tooltip>
 
@@ -73,15 +70,15 @@ const Sidebar = () => {
 								variant="ghost"
 								size="icon"
 								className="mt-auto rounded-lg"
-								aria-label="Account"
+								aria-label="camp"
 							>
-								<Link href="/citadel/account">
+								<Link href="/battlefield/camp">
 									<FlameKindling className="size-5" />
 								</Link>
 							</Button>
 						</TooltipTrigger>
 						<TooltipContent side="right" sideOffset={5}>
-							Account
+							Camp
 						</TooltipContent>
 					</Tooltip>
 				</nav>
