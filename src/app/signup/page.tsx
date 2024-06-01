@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -12,6 +13,10 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+
+export const metadata: Metadata = {
+	title: 'Sign up',
+};
 
 function SignupForm() {
 	return (

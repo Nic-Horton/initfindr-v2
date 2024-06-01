@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import BattleController from '@/components/BattleController';
+
+export const metadata: Metadata = {
+	title: 'Battlefield',
+};
 
 function Dashboard() {
 	return (

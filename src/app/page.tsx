@@ -26,7 +26,9 @@ export default function Home() {
 								<h1 className="w-fit tracking-tight text-balance mt-8 font-bold !leading-tight text-white text-6xl lg:text-7xl">
 									<span className="bg-[#c8b874] px-2 text-gray-900">Init</span>
 									iative{' '}
-									<span className="bg-primary px-2 text-gray-900">Finder</span>
+									<span className="bg-primary px-2 text-gray-900">
+										Find<span className="">e</span>r
+									</span>
 								</h1>
 							</div>
 						</div>

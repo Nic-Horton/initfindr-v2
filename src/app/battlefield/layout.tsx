@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { LogOutIcon } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
-
 import Sidebar from '@/components/Sidebar';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
