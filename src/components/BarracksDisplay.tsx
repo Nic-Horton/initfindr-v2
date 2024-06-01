@@ -73,7 +73,7 @@ const BarracksDisplay = () => {
 						Creature Stats
 					</legend>
 
-					<div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(75px,1fr))]">
+					<div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(85px,1fr))]">
 						<div className="grid gap-2">
 							<Label htmlFor="ac">
 								<div className="flex items-center justify-center gap-1">
