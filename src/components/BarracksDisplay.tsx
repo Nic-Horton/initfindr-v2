@@ -31,17 +31,17 @@ const BarracksDisplay = () => {
 			</div>
 			<Separator />
 			<div className="grid w-full items-start gap-6 overflow-auto p-2 max-w-screen-xl mx-auto">
-				<fieldset className="grid lg:grid-cols-2 gap-6 rounded-lg border p-4">
+				<fieldset className="grid md:grid-cols-2 gap-6 rounded-lg border p-4">
 					<legend className="-ml-1 px-1 text-sm font-medium">
 						Creature Information
 					</legend>
 
 					<div className="grid gap-3">
-						<div className="grid col-span-full gap-2">
+						<div className="grid col-span-full gap-2 h-fit">
 							<Label htmlFor="name">Name</Label>
 							<Input id="name" placeholder="John Doe" required />
 						</div>
-						<div className="grid col-span-full gap-2">
+						<div className="grid col-span-full gap-2 h-fit">
 							<Label htmlFor="portrait">Portrait</Label>
 							<Input
 								id="portrait"
@@ -49,7 +49,7 @@ const BarracksDisplay = () => {
 								className="hover:cursor-pointer"
 							/>
 						</div>
-						<div className="grid col-span-full gap-2">
+						<div className="grid col-span-full gap-2 h-fit">
 							<Label htmlFor="description">Description</Label>
 							<Textarea
 								placeholder="Enter creature description"
@@ -57,7 +57,7 @@ const BarracksDisplay = () => {
 							/>
 						</div>
 					</div>
-					<div className="hidden lg:flex relative w-full justify-center">
+					<div className="hidden md:flex relative w-full justify-center">
 						<Image
 							src={'/placeholder.svg'}
 							height="200"
