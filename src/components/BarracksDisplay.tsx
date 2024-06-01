@@ -11,6 +11,7 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from '@/components/ui/tooltip';
+import Image from 'next/image';
 
 const BarracksDisplay = () => {
 	return (
@@ -56,8 +57,14 @@ const BarracksDisplay = () => {
 							/>
 						</div>
 					</div>
-					<div className="hidden lg:flex relative w-full bg-red-400">
-						<img src={'/oopsWarrior.jpg'} alt="Selected image" />
+					<div className="hidden lg:flex relative w-full justify-center">
+						<Image
+							src={'/placeholder.svg'}
+							height="200"
+							width="200"
+							alt="Selected image"
+							className="aspect-square w-full max-w-[350px] rounded-md object-cover"
+						/>
 					</div>
 				</fieldset>
 
