@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 					<h1 className="text-xl font-semibold">The Battlefield</h1>
 					<Button
 						asChild
-						variant="outline"
+						variant="destructive"
 						size="sm"
 						className="ml-auto gap-1.5 text-sm"
 					>
