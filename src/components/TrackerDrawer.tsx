@@ -52,7 +52,7 @@ const TrackerDrawer = () => {
 						Configure the battlefield.
 					</DrawerDescription>
 				</DrawerHeader>
-				<div className="overflow-auto p-4 pt-0">
+				<div data-vaul-no-drag className="overflow-auto p-4 pt-0">
 					<BattleController />
 				</div>
 			</DrawerContent>

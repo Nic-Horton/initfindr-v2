@@ -6,40 +6,65 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Image from 'next/image';
 
+import {
+	ResizableHandle,
+	ResizablePanel,
+	ResizablePanelGroup,
+} from '@/components/ui/resizable';
+
 const NewCreature = () => {
 	return (
-		<div className="grid w-full items-start gap-6 overflow-auto p-4 pt-0 max-w-screen-xl mx-auto">
-			<fieldset className="grid md:grid-cols-2 gap-6 rounded-lg border p-4">
+		<div
+			data-vaul-no-drag
+			className="grid w-full items-start gap-6 overflow-auto p-4 pt-0 max-w-screen-xl mx-auto"
+		>
+			<fieldset className="grid gap-6 rounded-lg border p-4">
 				<legend className="-ml-1 px-1 text-sm font-medium">
 					Creature Information
 				</legend>
-
-				<div className="grid gap-3">
-					<div className="grid col-span-full gap-2 h-fit">
-						<Label htmlFor="name">Name</Label>
-						<Input id="name" placeholder="John Doe" required />
-					</div>
-					<div className="grid col-span-full gap-2 h-fit">
-						<Label htmlFor="portrait">Portrait</Label>
-						<Input id="portrait" type="file" className="hover:cursor-pointer" />
-					</div>
-					<div className="grid col-span-full gap-2 h-fit">
-						<Label htmlFor="description">Description</Label>
-						<Textarea
-							placeholder="Enter creature description"
-							id="description"
+				<ResizablePanelGroup
+					direction="horizontal"
+					className="grid md:grid-cols-2 gap-6"
+				>
+					<ResizablePanel defaultSize={70}>
+						<div className="grid gap-3 p-1 h-fit">
+							<div className="grid col-span-full gap-2">
+								<Label htmlFor="name">Name</Label>
+								<Input id="name" placeholder="John Doe" required />
+							</div>
+							<div className="grid col-span-full gap-2">
+								<Label htmlFor="portrait">Portrait</Label>
+								<Input
+									id="portrait"
+									type="file"
+									className="hover:cursor-pointer"
+								/>
+							</div>
+							<div className="grid col-span-full gap-2">
+								<Label htmlFor="description">Description</Label>
+								<Textarea
+									placeholder="Enter creature description"
+									id="description"
+								/>
+							</div>
+						</div>
+					</ResizablePanel>
+					<ResizableHandle withHandle className="hidden md:flex" />
+					<ResizablePanel
+						defaultSize={30}
+						className="hidden md:flex relative w-full justify-center"
+					>
+						{/* <div className="hidden md:flex relative w-full justify-center"> */}
+						<Image
+							src={'/placeholder.svg'}
+							height="200"
+							width="200"
+							alt="Selected image"
+							className="aspect-square w-full max-w-[400px] rounded-md object-cover"
 						/>
-					</div>
-				</div>
-				<div className="hidden md:flex relative w-full justify-center">
-					<Image
-						src={'/placeholder.svg'}
-						height="200"
-						width="200"
-						alt="Selected image"
-						className="aspect-square w-full max-w-[400px] rounded-md object-cover"
-					/>
-				</div>
+						{/* </div> */}
+					</ResizablePanel>
+				</ResizablePanelGroup>
 			</fieldset>
 
 			<fieldset className="grid grid-cols-2 grid-rows-2 sm:grid-cols-5 gap-6 rounded-lg border p-4">

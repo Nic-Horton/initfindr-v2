@@ -58,10 +58,11 @@ const BarracksDrawer = () => {
 				</DrawerHeader>
 
 				<ResizablePanelGroup
+					data-vaul-no-drag
 					direction="horizontal"
-					className="h-full max-h-[80vh] min-h-[60vh] items-stretch"
+					className="h-full min-h-[60vh] items-stretch max-w-screen-xl mx-auto rounded-lg border"
 				>
-					<ResizablePanel defaultSize={40}>
+					<ResizablePanel defaultSize={30}>
 						<div className="flex items-center px-4 py-2">
 							<h1 className="text-xl font-bold">Creatures</h1>
 						</div>
@@ -78,7 +79,7 @@ const BarracksDrawer = () => {
 						<BarracksCreatures />
 					</ResizablePanel>
 					<ResizableHandle withHandle />
-					<ResizablePanel defaultSize={60}>
+					<ResizablePanel defaultSize={70}>
 						{/* Need to make this dynamic later */}
 						<BarracksDisplay />
 					</ResizablePanel>
