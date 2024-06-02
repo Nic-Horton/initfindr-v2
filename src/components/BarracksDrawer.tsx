@@ -62,7 +62,7 @@ const BarracksDrawer = () => {
 					direction="horizontal"
 					className="h-full min-h-[60vh] items-stretch max-w-screen-xl mx-auto rounded-lg border"
 				>
-					<ResizablePanel defaultSize={30}>
+					<ResizablePanel defaultSize={30} className="md:min-w-60">
 						<div className="flex items-center px-4 py-2">
 							<h1 className="text-xl font-bold">Creatures</h1>
 						</div>
@@ -79,7 +79,7 @@ const BarracksDrawer = () => {
 						<BarracksCreatures />
 					</ResizablePanel>
 					<ResizableHandle withHandle />
-					<ResizablePanel defaultSize={70}>
+					<ResizablePanel defaultSize={70} className="md:min-w-72">
 						{/* Need to make this dynamic later */}
 						<BarracksDisplay />
 					</ResizablePanel>

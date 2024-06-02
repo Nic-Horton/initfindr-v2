@@ -31,7 +31,7 @@ const BarracksDisplay = () => {
 			</div>
 			<Separator />
 			<div className="grid w-full items-start gap-2 overflow-auto p-2 max-w-screen-xl mx-auto">
-				<fieldset className="grid md:grid-cols-2 gap-6 rounded-lg border p-4">
+				<fieldset className="grid md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 rounded-lg border p-4">
 					<legend className="-ml-1 px-1 text-sm font-medium">
 						Creature Information
 					</legend>
@@ -54,6 +54,7 @@ const BarracksDisplay = () => {
 							<Textarea
 								placeholder="Enter creature description"
 								id="description"
+								className="max-h-[180px]"
 							/>
 						</div>
 					</div>
@@ -73,12 +74,12 @@ const BarracksDisplay = () => {
 						Creature Stats
 					</legend>
 
-					<div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(85px,1fr))]">
+					<div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(106px,1fr))]">
 						<div className="grid gap-2">
 							<Label htmlFor="ac">
 								<div className="flex items-center justify-center gap-1">
 									<Shield className="size-5" />
-									Armor
+									Armor Class
 								</div>
 							</Label>
 							<Input id="ac" type="number" />
