@@ -31,7 +31,7 @@ const TrackerDrawer = () => {
 							<Button
 								variant="ghost"
 								size="icon"
-								className="md:hidden rounded-lg"
+								className="lg:hidden rounded-lg"
 								aria-label="Battle Configurations"
 							>
 								<Settings className="size-5" />

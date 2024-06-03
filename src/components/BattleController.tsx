@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Sword, Swords, Trash, ScanEye } from 'lucide-react';
+import { Sword, Swords, Trash, Search } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -14,6 +14,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
+import BarracksCreatures from './BarracksCreatures';
 
 const tags = Array.from({ length: 10 }).map(
 	(_, i, a) => `Unit ${a.length - i}`
@@ -87,52 +88,22 @@ const BattleController = () => {
 				</div>
 			</fieldset>
 
-			<fieldset className="grid gap-6 rounded-lg border p-4">
+			<fieldset className="grid gap-6 rounded-lg border p-4 pb-0">
 				<legend className="-ml-1 px-1 text-sm font-medium">
 					Creature Selection
 				</legend>
 
-				<div className="grid gap-3">
-					<div className="grid gap-2">
-						<Input
-							id="search"
-							type="text"
-							placeholder={'Search for creatures...'}
-						/>
-
-						<ScrollArea className="h-52 w-full rounded-md border">
-							<div className="p-4">
-								<h4 className="mb-4 text-sm font-medium leading-none">
-									Creatures
-								</h4>
-								{tags.map((tag) => (
-									<>
-										<div
-											key={tag}
-											className="text-sm flex justify-between items-center"
-										>
-											<Button
-												variant={'ghost'}
-												type="button"
-												className="w-full justify-start"
-											>
-												{tag}
-											</Button>
-											<Button
-												variant={'ghost'}
-												size={'icon'}
-												type="button"
-												className=""
-											>
-												<ScanEye className="size-5" />
-											</Button>
-										</div>
-										<Separator className="my-2" />
-									</>
-								))}
+				<div className="flex flex-col max-h-96">
+					<div className="bg-background/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+						<form>
+							<div className="relative">
+								<Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+								<Input placeholder="Search" className="pl-8" />
 							</div>
-						</ScrollArea>
+						</form>
 					</div>
+
+					<BarracksCreatures />
 				</div>
 			</fieldset>
 		</div>
