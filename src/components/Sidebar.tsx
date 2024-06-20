@@ -24,6 +24,25 @@ const Sidebar = () => {
 					</Button>
 				</div>
 				<nav className="grid gap-1 p-2">
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<Button
+								asChild
+								variant="ghost"
+								size="icon"
+								className="rounded-lg"
+								aria-label="battlefield"
+							>
+								<Link href="/battlefield">
+									<Swords className="size-5" />
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent side="right" sideOffset={5}>
+							The Battlefield
+						</TooltipContent>
+					</Tooltip>
+
 					<CreatureDrawer />
 
 					<BarracksDrawer />
