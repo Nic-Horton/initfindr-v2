@@ -14,7 +14,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-import BarracksCreatures from './BarracksCreatures';
+import BarracksCreatures from './barracks/BarracksCreatures';
 
 const tags = Array.from({ length: 10 }).map(
 	(_, i, a) => `Unit ${a.length - i}`

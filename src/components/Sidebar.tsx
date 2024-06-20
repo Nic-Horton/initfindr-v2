@@ -9,8 +9,8 @@ import {
 	TooltipProvider,
 } from '@/components/ui/tooltip';
 import TrackerDrawer from './TrackerDrawer';
-import CreatureDrawer from './CreatureDrawer';
-import BarracksDrawer from './BarracksDrawer';
+import CreatureDrawer from './forge/CreatureDrawer';
+import BarracksDrawer from './barracks/BarracksDrawer';
 
 const Sidebar = () => {
 	return (
