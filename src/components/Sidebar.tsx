@@ -47,25 +47,6 @@ const Sidebar = () => {
 
 					<BarracksDrawer />
 
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
-								asChild
-								variant="ghost"
-								size="icon"
-								className="rounded-lg"
-								aria-label="camp"
-							>
-								<Link href="/battlefield/camp">
-									<FlameKindling className="size-5" />
-								</Link>
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent side="right" sideOffset={5}>
-							Camp
-						</TooltipContent>
-					</Tooltip>
-
 					<TrackerDrawer />
 				</nav>
 			</TooltipProvider>
