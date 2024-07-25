@@ -4,6 +4,7 @@ import { auth } from '../lib/firebase';
 import {
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
+	signOut as firebaseSignOut,
 } from 'firebase/auth';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -117,3 +118,12 @@ export default function Auth() {
 		</MaxWidthWrapper>
 	);
 }
+
+export const signOut = async () => {
+	try {
+		await firebaseSignOut(auth);
+		console.log('User signed out successfully');
+	} catch (error) {
+		console.error('Error signing out:', error);
+	}
+};
