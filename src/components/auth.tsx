@@ -1,11 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { auth } from '../lib/firebase';
-import {
-	signInWithEmailAndPassword,
-	createUserWithEmailAndPassword,
-	signOut as firebaseSignOut,
-} from 'firebase/auth';
 import { useRouter, usePathname } from 'next/navigation';
 
 import Link from 'next/link';
@@ -23,22 +17,32 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 
+import useLogin from '@/hooks/useLogin';
+import useSignUp from '@/hooks/useSignUp';
+
 export default function Auth() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [inputs, setInputs] = useState({
+		email: '',
+		password: '',
+	});
 	const [error, setError] = useState('');
 	const router = useRouter();
 	const pathname = usePathname();
 
+	const { login, loading: loginLoading, error: loginError } = useLogin();
+	const { signup, loading: signUpLoading, error: signUpError } = useSignUp();
+
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		console.log(inputs);
 		try {
 			if (pathname === '/signin') {
-				await signInWithEmailAndPassword(auth, email, password);
+				await login(inputs);
+				router.replace('/battlefield');
 			} else if (pathname === '/signup') {
-				await createUserWithEmailAndPassword(auth, email, password);
+				await signup(inputs);
+				router.replace('/battlefield');
 			}
-			router.push('/battlefield');
 		} catch (err) {
 			if (err instanceof Error) {
 				setError(err.message);
@@ -72,8 +76,10 @@ export default function Auth() {
 							<Input
 								id="email"
 								type="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
+								value={inputs.email}
+								onChange={(e) =>
+									setInputs({ ...inputs, email: e.target.value })
+								}
 								placeholder="jdoe@example.com"
 								required
 							/>
@@ -85,14 +91,24 @@ export default function Auth() {
 							<Input
 								id="password"
 								type="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
+								value={inputs.password}
+								onChange={(e) =>
+									setInputs({ ...inputs, password: e.target.value })
+								}
 								placeholder="Password"
 								required
 							/>
 						</div>
-						<Button type="submit" className="w-full">
-							{pathname == '/signin' ? 'Sign in' : 'Sign up'}
+						<Button
+							type="submit"
+							className="w-full"
+							disabled={loginLoading || signUpLoading}
+						>
+							{loginLoading || signUpLoading
+								? 'Loading...'
+								: pathname == '/signin'
+								? 'Sign in'
+								: 'Sign up'}
 						</Button>
 					</form>
 					<div className="mt-4 text-center text-sm">
@@ -113,17 +129,19 @@ export default function Auth() {
 						)}
 					</div>
 					{error && <p>{error}</p>}
+					{loginError && <p>{loginError.message}</p>}
+					{signUpError && <p>{signUpError.message}</p>}
 				</CardContent>
 			</Card>
 		</MaxWidthWrapper>
 	);
 }
 
-export const signOut = async () => {
-	try {
-		await firebaseSignOut(auth);
-		console.log('User signed out successfully');
-	} catch (error) {
-		console.error('Error signing out:', error);
-	}
-};
+// export const signOut = async () => {
+// 	try {
+// 		await firebaseSignOut(auth);
+// 		console.log('User signed out successfully');
+// 	} catch (error) {
+// 		console.error('Error signing out:', error);
+// 	}
+// };

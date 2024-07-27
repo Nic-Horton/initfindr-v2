@@ -3,21 +3,21 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import useAuthStore from '../store/authStore';
 
-interface WithAuthProps {
+interface RedirectIfAuthenticatedProps {
 	children: ReactNode;
 }
 
-const WithAuth = ({ children }: WithAuthProps) => {
+const RedirectIfAuthenticated = ({
+	children,
+}: RedirectIfAuthenticatedProps) => {
 	const user = useAuthStore((state) => state.user);
 	const router = useRouter();
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (!user) {
-			console.log('User is null:', user);
-			router.push('/auth');
+		if (user) {
+			router.push('/battlefield');
 		} else {
-			console.log('User:', user);
 			setLoading(false);
 		}
 	}, [user, router]);
@@ -29,4 +29,4 @@ const WithAuth = ({ children }: WithAuthProps) => {
 	return <>{children}</>;
 };
 
-export default WithAuth;
+export default RedirectIfAuthenticated;

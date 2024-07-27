@@ -78,7 +78,7 @@ export default function Home() {
 							</ul>
 
 							<Link
-								href="/signin"
+								href="/auth"
 								className={buttonVariants({
 									size: 'lg',
 									className: 'mt-8 ',
